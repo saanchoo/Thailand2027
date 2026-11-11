@@ -39,9 +39,8 @@ export default function Finale() {
       <footer className="bg-black px-4 py-12 text-xs leading-relaxed text-neutral-500 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <p>Lost in Thailand · 2027 · Una película de Sergio, protagonizada por Nuria. Ningún macaco fue alimentado durante el rodaje. Los precios son estimaciones en euros para los dos; no hay reservas, horarios ni precios verificados salvo el vuelo de ida.</p>
-          <p className="mt-3">Fotografía de destinos: colaboradores de Wikimedia Commons, bajo sus licencias libres —{' '}
-            {Object.values(IMG).map((f, i) => <a key={f} href={filePage(f)} target="_blank" rel="noreferrer" className="underline-offset-2 hover:underline">{i + 1}{i < Object.values(IMG).length - 1 ? ', ' : ''}</a>)}.
-          </p>
+          <p className="mt-3">Fotografía de destinos: Unsplash (licencia Unsplash) y colaboradores de Wikimedia Commons —{' '}
+            {Object.values(IMG).filter(f => !f.startsWith('photo-')).map(f => <a key={f} href={filePage(f)} target="_blank" rel="noreferrer" className="hover:underline">{f}</a>)}. Las fotos de hoteles y lugares son ilustrativas.</p>
         </div>
       </footer>
     </>

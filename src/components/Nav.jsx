@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform, useSpring } from 'motion/react'
 import { HuntCounter } from './fun'
-const L = [['route', 'Ruta'], ['bangkok', 'Bangkok'], ['bichos', 'Bichos'], ['krabi', 'Krabi'], ['monos', 'Monos'], ['itinerary', 'Días'], ['budget', 'Pasta'], ['contrato', 'Contrato']]
+const L = [['route', 'Ruta'], ['bangkok', 'Bangkok'], ['bichos', 'Bichos'], ['krabi', 'Krabi'], ['monos', 'Monos'], ['itinerary', 'Días'], ['contrato', 'Contrato']]
 export default function Nav() {
   const { scrollYProgress: p, scrollY } = useScroll()
   const op = useTransform(scrollY, [300, 600], [0, 1])

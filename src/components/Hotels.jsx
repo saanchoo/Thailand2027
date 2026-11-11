@@ -30,7 +30,7 @@ export default function Hotels() {
         ))}
       </div>
       <Reveal className="mx-auto mt-8 max-w-6xl px-4 text-sm text-neutral-500 sm:px-6">
-        La pareja recomendada sale ≈ €555–840 por 10 noches frente a €700 objetivo. El día de lujo puede ser una noche mejorada o un day pass, tirando de imprevistos.
+        El día de lujo puede ser una noche mejorada en el resort o un day pass en uno de alto nivel.
       </Reveal>
     </section>
   )

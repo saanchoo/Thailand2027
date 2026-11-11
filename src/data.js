@@ -1,6 +1,9 @@
 // Precios: EUR para los dos. "est" = estimación (sin verificar ni reservar). "given" = dato vuestro.
 const FP = 'https://commons.wikimedia.org/wiki/Special:FilePath/'
-export const img = (file, w = 1600) => `${FP}${encodeURIComponent(file)}?width=${w}`
+// Unsplash ids start with 'photo-'; everything else is a Wikimedia Commons file name
+export const img = (file, w = 1600) => file.startsWith('photo-')
+  ? `https://images.unsplash.com/${file}?w=${w}&q=80&auto=format&fit=crop`
+  : `${FP}${encodeURIComponent(file)}?width=${w}`
 export const filePage = file => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file.replace(/ /g, '_'))}`
 
 // Vuestras fotos (generadas con Nano Banana). Guardadas en public/photos/
@@ -14,25 +17,26 @@ export const PHOTO = {
 }
 
 export const IMG = {
-  hero: 'Playa Maya, Ko Phi Phi, Tailandia, 2013-08-19, DD 13.JPG',
-  arun: 'Wat Arun 03-2012-01.JPG',
-  arunNight: 'Templo Wat Arun, Bangkok, Tailandia, 2013-08-22, DD 37.jpg',
+  hero: 'photo-1552465011-b4e21bf6e79a',
+  arun: 'photo-1762950297550-1d8d7cce12ae',
+  arunNight: 'photo-1701958596353-11ea6c8500f3',
   pho: 'Wat Pho, Bangkok, Tailandia, 2013-08-22, DD 05.jpg',
-  china: '2016 Bangkok, Dystrykt Samphanthawong, Ulica Yaowarat (09).jpg',
-  skyline: 'Bangkok skytrain sunset.jpg',
-  rooftop: 'Royal Palace and City Skyline Bangkok at Thailand.jpg',
-  tuktuk: 'Tuc-tucs en la Calle Maha Rat, Bangkok, Tailandia, 2013-08-22, DD 01.jpg',
-  railay: 'Railay, Krabi, Thailand.jpg',
-  phranang: 'Phra Nang beach 2.jpg',
-  hong: 'Ko Hong island beach.jpg',
-  thalane: 'Kayaking in Ao Thalane.jpg',
-  monkey: 'Macaca fascicularis Ao Nang 6.jpg',
-  aonang: 'Nopparat Thara Beach panorama 1.jpg',
-  karst: 'Koh Poda, Krabi, Thailand.jpg',
-  jungle: 'Dramatic karst formations in Phang Nga Bay, Thailand.jpg',
-  pool: 'Nice pool, Phangan bayshore hotel - panoramio.jpg',
-  poolBkk: 'The Peninsula Bangkok Pool.jpg',
-  massage: 'Thai Massage.jpg',
+  china: 'photo-1508009603885-50cf7c579365',
+  skyline: 'photo-1523731407965-2430cd12f5e4',
+  rooftop: 'photo-1584293938526-76d5ceac45f1',
+  tuktuk: 'photo-1615619825440-f18cea64b00e',
+  railay: 'photo-1650259874515-2cd3af8b8980',
+  phranang: 'photo-1761465063742-aac680af138e',
+  hong: 'photo-1538475711279-0373b6bc754e',
+  thalane: 'photo-1642124587211-998635ef31d5',
+  monkey: 'photo-1613376285651-140dcffdb430',
+  aonang: 'photo-1688625548814-d7bb114d344e',
+  karst: 'photo-1587242882574-2005e53dcc33',
+  jungle: 'photo-1575515602219-a177b8cc5e99',
+  pool: 'photo-1520250497591-112f2f40a3f4',
+  luxury: 'photo-1605537964076-3cb0ea2ff329',
+  poolBkk: 'photo-1536625737227-92a1fc042e7e',
+  massage: 'photo-1775133262667-316bd4d9e5b5',
 }
 
 export const TRIP = {
@@ -54,7 +58,7 @@ export const EXPERIENCES = [
   { id: 'wild', city: 'Krabi', cat: 'Monos', title: 'Macacos en libertad', where: 'Railay · colinas de Ao Nang', dur: '1–2 h', cost: '€0', img: IMG.monkey, text: 'La misión personal de Nuria. Macacos de cola larga viviendo libres entre los acantilados. Se miran de lejos y nunca se les da de comer.' },
   { id: 'tiger', city: 'Krabi', cat: 'Selva', title: 'Mirador del Tiger Cave', where: 'Wat Tham Suea, Krabi Town', dur: '3 h', cost: '€15 (taxi)', img: IMG.jungle, text: '1.260 escalones empinados hasta una vista 360° de selva y roca. Al amanecer, con agua, hombros y rodillas cubiertos. Puede haber monos.' },
   { id: 'spa', city: 'Krabi', cat: 'Relax', title: 'Tardes de masaje', where: 'Ao Nang / spa del resort', dur: '1–2 h', cost: '€20–40 /sesión', img: IMG.massage, text: 'Los locales a pie de calle son baratos; el spa del resort cuesta varias veces más. Hay presupuesto para unas 4 sesiones.' },
-  { id: 'lux', city: 'Krabi', cat: 'Lujo', title: 'El día de lujo', where: 'Klong Muang / Tubkaek', dur: 'Día completo', cost: '€80–200', img: IMG.pool, text: 'Un día de verdad: piscina infinita, spa y cena al atardecer. O una noche mejorada, o un day pass en un resort top.' },
+  { id: 'lux', city: 'Krabi', cat: 'Lujo', title: 'El día de lujo', where: 'Klong Muang / Tubkaek', dur: 'Día completo', cost: '€80–200', img: IMG.luxury, text: 'Un día de verdad: piscina infinita, spa y cena al atardecer. O una noche mejorada, o un day pass en un resort top.' },
 ]
 
 export const HOTELS = [

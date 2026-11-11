@@ -8,7 +8,6 @@ import MonkeyRules from './components/MonkeyRules'
 import Experiences from './components/Experiences'
 import Hotels from './components/Hotels'
 import Itinerary from './components/Itinerary'
-import Budget from './components/Budget'
 import Contract from './components/Contract'
 import Finale from './components/Finale'
 import { HuntProvider } from './components/fun'
@@ -37,7 +36,6 @@ export default function App() {
         <Experiences />
         <Hotels />
         <Itinerary />
-        <Budget />
         <Contract />
         <Finale />
       </main>

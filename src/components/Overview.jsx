@@ -68,7 +68,7 @@ export default function Overview() {
             </div>
           </Reveal>
         </div>
-        <Reveal className="mt-6 text-sm text-neutral-500">Presupuesto: 2.000–2.500 € para los dos sin vuelos largos · Estilo: mochila con caprichos de lujo · Koh Jum descartado: añadía un día de barcos y traslados por cada lado.</Reveal>
+        <Reveal className="mt-6 text-sm text-neutral-500">Estilo: mochila con caprichos de lujo · Koh Jum descartado: añadía un día de barcos y traslados por cada lado.</Reveal>
       </div>
     </section>
   )
